@@ -30,25 +30,25 @@
 					<prime:inputText value="#{applicationScopedBean.counter}" disabled="true"/>
 					<prime:inputText value="#{applicationScopedBean.counter}" disabled="true"/>
 					<prime:inputText value="#{applicationScopedBean.counter}" disabled="true"/>
-					<prime:outputLabel></prime:outputLabel>
+					<prime:outputLabel value="Open a second browser to see the difference between session and application scope" />
 					
 					<prime:outputLabel value="Session scope" />
 					<prime:inputText value="#{sessionScopedBean.counter}" disabled="true"/>
 					<prime:inputText value="#{sessionScopedBean.counter}" disabled="true"/>
 					<prime:inputText value="#{sessionScopedBean.counter}" disabled="true"/>
-					<prime:outputLabel value="Open a second browser to see the difference between session and application scope" />
+					<prime:outputLabel value="Click 'Jump to second page' to see the difference to View scope" />
 					
 					<prime:outputLabel value="View scope" />
 					<prime:inputText value="#{viewScopedBean.counter}" disabled="true"/>
 					<prime:inputText value="#{viewScopedBean.counter}" disabled="true"/>
 					<prime:inputText value="#{viewScopedBean.counter}" disabled="true"/>
-					<prime:outputLabel value="Click 'Jump to second page' to see the difference to Request scope" />
+					<prime:outputLabel value="Hitting the F5 key resets the counter. Clicking the AJAX button 'Count' doesn't." />
 					
 					<prime:outputLabel value="Request scope" />
 					<prime:inputText value="#{requestScopedBean.counter}" disabled="true"/>
 					<prime:inputText value="#{requestScopedBean.counter}" disabled="true"/>
 					<prime:inputText value="#{requestScopedBean.counter}" disabled="true"/>
-					<prime:outputLabel value="" />
+					<prime:outputLabel value="Only the values entered by the user or defined during processing the request are stored in the request scope." />
 
 					<prime:outputLabel value="None scope" />
 					<prime:inputText value="#{noneScopedBean.counter}" disabled="true"/>
