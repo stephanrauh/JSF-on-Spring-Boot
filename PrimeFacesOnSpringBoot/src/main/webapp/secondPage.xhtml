@@ -1,0 +1,72 @@
+<f:view xmlns="http://www.w3c.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:ng="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:prime="http://primefaces.org/ui">
+	<h:head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title>#{menuController.title}</title>
+		<style>
+</style>
+	</h:head>
+	<h:body>
+		<h:form>
+			<prime:panel header="What do you see here?">
+				This JSF page demonstrates the difference between JSF scopes. Every line displays a counter in a certain scope.
+				Each time the counter is read, it is also increased. Every line displays the counter three times.
+				If a counter is reset (because the scope had reached the end of its life cycle), the counter starts with "1" again.
+			</prime:panel>
+		
+			<prime:panel header="Second JSF View of the scope demo">
+				<prime:panelGrid columns="4">
+					<prime:outputLabel value="Scope" />
+					<prime:outputLabel value="First call" />
+					<prime:outputLabel value="Second call" />
+					<prime:outputLabel value="Third call" />
+					
+					<prime:outputLabel value="Application scope" />
+					<prime:inputText value="#{applicationScopedBean.counter}" disabled="true"/>
+					<prime:inputText value="#{applicationScopedBean.counter}" disabled="true"/>
+					<prime:inputText value="#{applicationScopedBean.counter}" disabled="true"/>
+					
+					<prime:outputLabel value="Session scope" />
+					<prime:inputText value="#{sessionScopedBean.counter}" disabled="true"/>
+					<prime:inputText value="#{sessionScopedBean.counter}" disabled="true"/>
+					<prime:inputText value="#{sessionScopedBean.counter}" disabled="true"/>
+					
+					<prime:outputLabel value="View scope" />
+					<prime:inputText value="#{viewScopedBean.counter}" disabled="true"/>
+					<prime:inputText value="#{viewScopedBean.counter}" disabled="true"/>
+					<prime:inputText value="#{viewScopedBean.counter}" disabled="true"/>
+					
+					<prime:outputLabel value="Request scope" />
+					<prime:inputText value="#{requestScopedBean.counter}" disabled="true"/>
+					<prime:inputText value="#{requestScopedBean.counter}" disabled="true"/>
+					<prime:inputText value="#{requestScopedBean.counter}" disabled="true"/>
+
+					<prime:outputLabel value="None scope" />
+					<prime:inputText value="#{noneScopedBean.counter}" disabled="true"/>
+					<prime:inputText value="#{noneScopedBean.counter}" disabled="true"/>
+					<prime:inputText value="#{noneScopedBean.counter}" disabled="true"/>
+
+					<prime:outputLabel value="Custom scope" />
+					<prime:outputLabel value="(work in progress)" />
+					<prime:inputText value="#{customScopedBean.counter}" disabled="true"/>
+					<prime:inputText value="#{customScopedBean.counter}" disabled="true"/>
+					
+					<prime:commandButton value="Count!" action="#{countBean.onClick}" ajax="true" update="@form" />
+					<prime:commandButton value="jump to first JSF page" action="index.xhtml" />
+					<prime:commandButton value="start custom scope" onclick="alert('Not implemented yet');" />
+					<prime:commandButton value="destroy custom scope" onclick="alert('Not implemented yet');"/>
+					
+					
+				</prime:panelGrid>
+			</prime:panel>
+			<prime:panel header="Spring Scope demo">
+			(work in progress)
+			</prime:panel>
+		</h:form>
+	</h:body>
+</f:view>
