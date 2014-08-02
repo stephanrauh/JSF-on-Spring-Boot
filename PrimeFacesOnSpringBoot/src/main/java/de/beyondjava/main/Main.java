@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 import javax.faces.webapp.FacesServlet;
 
 @Configuration
-@ComponentScan
+@ComponentScan(basePackages={"de"})
 @EnableAutoConfiguration
 public class Main {
 
