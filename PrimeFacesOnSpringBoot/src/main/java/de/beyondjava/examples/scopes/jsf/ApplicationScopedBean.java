@@ -1,13 +1,13 @@
-package de.beyondjava.examples.scopes;
+package de.beyondjava.examples.scopes.jsf;
 
 import java.io.Serializable;
 
-import javax.faces.bean.CustomScoped;
+import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 
-@CustomScoped("#{ManualScope}")
+@ApplicationScoped
 @ManagedBean
-public class ManualScopedBean implements Serializable {
+public class ApplicationScopedBean implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private int counter=1;
 	

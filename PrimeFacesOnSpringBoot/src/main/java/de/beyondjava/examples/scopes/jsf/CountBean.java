@@ -1,4 +1,4 @@
-package de.beyondjava.examples.scopes;
+package de.beyondjava.examples.scopes.jsf;
 
 import javax.faces.bean.ManagedBean;
 

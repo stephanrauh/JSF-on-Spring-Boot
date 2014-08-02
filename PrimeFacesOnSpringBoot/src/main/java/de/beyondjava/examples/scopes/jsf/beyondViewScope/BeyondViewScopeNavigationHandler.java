@@ -1,4 +1,4 @@
-package de.beyondjava.examples.scopes.beyondViewScope;
+package de.beyondjava.examples.scopes.jsf.beyondViewScope;
 
 import java.util.Map;
 import java.util.Set;

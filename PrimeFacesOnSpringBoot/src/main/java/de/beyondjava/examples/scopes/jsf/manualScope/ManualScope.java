@@ -1,4 +1,4 @@
-package de.beyondjava.examples.scopes.beyondViewScope;
+package de.beyondjava.examples.scopes.jsf.manualScope;
 
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -7,13 +7,13 @@ import javax.faces.event.PostConstructCustomScopeEvent;
 import javax.faces.event.PreDestroyCustomScopeEvent;
 import javax.faces.event.ScopeContext;
 
-public class BeyondViewScope extends ConcurrentHashMap<String, Object> {
+public class ManualScope extends ConcurrentHashMap<String, Object> {
  
     private static final long serialVersionUID = 6013804747421198557L;
  
-    public static final String SCOPE_NAME = "BeyondViewScope";
+    public static final String SCOPE_NAME = "ManualScope";
  
-    public BeyondViewScope(){
+    public ManualScope(){
         super();
     }
  

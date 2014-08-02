@@ -1,13 +1,13 @@
-package de.beyondjava.examples.scopes;
+package de.beyondjava.examples.scopes.jsf;
 
 import java.io.Serializable;
 
+import javax.faces.bean.CustomScoped;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
 
-@RequestScoped
+@CustomScoped("#{BeyondViewScope}")
 @ManagedBean
-public class RequestScopedBean implements Serializable {
+public class BeyondViewScopedBean implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private int counter=1;
 	
@@ -18,4 +18,5 @@ public class RequestScopedBean implements Serializable {
 	public void setCounter(int counter) {
 		this.counter = counter;
 	}
+
 }

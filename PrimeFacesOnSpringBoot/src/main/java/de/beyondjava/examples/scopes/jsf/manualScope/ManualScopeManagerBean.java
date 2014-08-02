@@ -1,4 +1,4 @@
-package de.beyondjava.examples.scopes.manualScope;
+package de.beyondjava.examples.scopes.jsf.manualScope;
 
 import java.io.Serializable;
 import java.util.Map;

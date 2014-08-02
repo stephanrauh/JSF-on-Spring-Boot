@@ -1,13 +1,11 @@
-package de.beyondjava.examples.scopes;
+package de.beyondjava.examples.scopes.jsf;
 
 import java.io.Serializable;
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.NoneScoped;
 
-@NoneScoped
 @ManagedBean
-public class NoneScopedBean implements Serializable {
+public class DefaultScopedBean implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private int counter=1;
 	

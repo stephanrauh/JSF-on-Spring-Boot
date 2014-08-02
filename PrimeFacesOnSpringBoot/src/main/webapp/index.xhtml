@@ -45,7 +45,7 @@
 					<prime:outputLabel value="#{changeTracker.track(21, viewScopedBean.counter)}" style="#{changeTracker.getStyle(21)}"/>
 					<prime:outputLabel value="#{changeTracker.track(22, viewScopedBean.counter)}" style="#{changeTracker.getStyle(22)}"/>
 					<prime:outputLabel value="#{changeTracker.track(23, viewScopedBean.counter)}" style="#{changeTracker.getStyle(23)}"/>
-					<prime:outputLabel value="Hitting the F5 key resets the counter. Clicking the AJAX button 'Count' doesn't." />
+					<prime:outputLabel value="Adding a space to the URL and hitting the F5 key resets the counter. Clicking the AJAX button 'Count' doesn't. Plus, due to a setting in the web.xml opening a new window or a new tab in your browser creates a new @ViewScope." />
 					
 					<prime:outputLabel value="Request scope" />
 					<prime:outputLabel value="#{changeTracker.track(31, requestScopedBean.counter)}" style="#{changeTracker.getStyle(31)}"/>
@@ -72,14 +72,14 @@
 					<prime:outputLabel value="This scope is slightly more persistent than @ViewScoped. It 'survives' a page reload forced by the F5 key (even if the user is adding a space behind the URL to get rid of the previous input)" />
 					
 					
-					<prime:commandButton value="Count! (AJAX)" action="#{countBean.onClick}" ajax="true" update="@form"/>
-					<prime:commandButton value="Count! (Non-AJAX)" action="#{countBean.onClick}" ajax="false"/>
-					<prime:commandButton value="forced reload (F5 key)" onclick="window.location='index.xhtml '"/>
-					<prime:commandButton value="leave view scopes" action="secondPage.xhtml" ajax="false" />
+					<prime:commandButton value="Count! (AJAX)" action="#{countBean.onClick}" ajax="true" update="@form" />
+					<prime:commandButton value="Count! (Non-AJAX)" action="#{countBean.onClick}" ajax="false" style="width:150px"/>
+					<prime:commandButton value="forced reload (F5 key)" onclick="window.location='index.xhtml '" style="width:170px"/>
+					<prime:commandButton value="leave view scopes" action="secondPage.xhtml" ajax="false" style="width:150px"/>
 					<prime:outputLabel value=""></prime:outputLabel>
 					<prime:outputLabel value=""></prime:outputLabel>
-					<prime:commandButton value="start custom scope" actionListener="#{manualScopeManagerBean.createScope}" update="@form" />
-					<prime:commandButton value="destroy custom scope" actionListener="#{manualScopeManagerBean.destroyScope}" update="@form"/>
+					<prime:commandButton value="start custom scope" actionListener="#{manualScopeManagerBean.createScope}" update="@form"  style="width:150px"/>
+					<prime:commandButton value="destroy custom scope" actionListener="#{manualScopeManagerBean.destroyScope}" update="@form" style="width:170px"/>
 					
 				</prime:panelGrid>
 			</prime:panel>
