@@ -9,6 +9,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<title>#{menuController.title}</title>
 		<style>
+		body {font-size:12px; }
 </style>
 	</h:head>
 	<h:body>
@@ -20,53 +21,64 @@
 			</prime:panel>
 			<prime:panel header="JSF 2.2 Scope demo">
 				<prime:panelGrid columns="5">
-					<prime:outputLabel value="Scope" />
-					<prime:outputLabel value="First call" />
-					<prime:outputLabel value="Second call" />
-					<prime:outputLabel value="Third call" />
-					<prime:outputLabel value="comment" />
+					<prime:outputLabel value="Scope" style="font-weight:bold" />
+					<prime:outputLabel value="First call" style="font-weight:bold" />
+					<prime:outputLabel value="Second call" style="font-weight:bold"/>
+					<prime:outputLabel value="Third call" style="font-weight:bold"/>
+					<prime:outputLabel value="Comment" style="font-weight:bold"/>
 					
 					<prime:outputLabel value="Application scope" />
-					<prime:inputText value="#{applicationScopedBean.counter}" disabled="true"/>
-					<prime:inputText value="#{applicationScopedBean.counter}" disabled="true"/>
-					<prime:inputText value="#{applicationScopedBean.counter}" disabled="true"/>
+					<prime:outputLabel value="#{applicationScopedBean.counter}" disabled="true"/>
+					<prime:outputLabel value="#{applicationScopedBean.counter}" disabled="true"/>
+					<prime:outputLabel value="#{applicationScopedBean.counter}" disabled="true"/>
 					<prime:outputLabel value="Open a second browser to see the difference between session and application scope" />
 					
 					<prime:outputLabel value="Session scope" />
-					<prime:inputText value="#{sessionScopedBean.counter}" disabled="true"/>
-					<prime:inputText value="#{sessionScopedBean.counter}" disabled="true"/>
-					<prime:inputText value="#{sessionScopedBean.counter}" disabled="true"/>
+					<prime:outputLabel value="#{sessionScopedBean.counter}" disabled="true"/>
+					<prime:outputLabel value="#{sessionScopedBean.counter}" disabled="true"/>
+					<prime:outputLabel value="#{sessionScopedBean.counter}" disabled="true"/>
 					<prime:outputLabel value="Click 'Jump to second page' to see the difference to View scope" />
 					
 					<prime:outputLabel value="View scope" />
-					<prime:inputText value="#{viewScopedBean.counter}" disabled="true"/>
-					<prime:inputText value="#{viewScopedBean.counter}" disabled="true"/>
-					<prime:inputText value="#{viewScopedBean.counter}" disabled="true"/>
+					<prime:outputLabel value="#{viewScopedBean.counter}" disabled="true"/>
+					<prime:outputLabel value="#{viewScopedBean.counter}" disabled="true"/>
+					<prime:outputLabel value="#{viewScopedBean.counter}" disabled="true"/>
 					<prime:outputLabel value="Hitting the F5 key resets the counter. Clicking the AJAX button 'Count' doesn't." />
 					
 					<prime:outputLabel value="Request scope" />
-					<prime:inputText value="#{requestScopedBean.counter}" disabled="true"/>
-					<prime:inputText value="#{requestScopedBean.counter}" disabled="true"/>
-					<prime:inputText value="#{requestScopedBean.counter}" disabled="true"/>
+					<prime:outputLabel value="#{requestScopedBean.counter}" disabled="true"/>
+					<prime:outputLabel value="#{requestScopedBean.counter}" disabled="true"/>
+					<prime:outputLabel value="#{requestScopedBean.counter}" disabled="true"/>
 					<prime:outputLabel value="Only the values entered by the user or defined during processing the request are stored in the request scope." />
 
 					<prime:outputLabel value="None scope" />
-					<prime:inputText value="#{noneScopedBean.counter}" disabled="true"/>
-					<prime:inputText value="#{noneScopedBean.counter}" disabled="true"/>
-					<prime:inputText value="#{noneScopedBean.counter}" disabled="true"/>
+					<prime:outputLabel value="#{noneScopedBean.counter}" disabled="true"/>
+					<prime:outputLabel value="#{noneScopedBean.counter}" disabled="true"/>
+					<prime:outputLabel value="#{noneScopedBean.counter}" disabled="true"/>
 					<prime:outputLabel value="New instance every on every access" />
 
-					<prime:outputLabel value="Custom scope" />
-					<prime:outputLabel value="(work in progress)" />
-					<prime:inputText value="#{customScopedBean.counter}" disabled="true"/>
-					<prime:inputText value="#{customScopedBean.counter}" disabled="true"/>
-					<prime:outputLabel value="no implemented yet" />
+					<prime:outputLabel value="Custom scope: ManualScope" />
+					<prime:outputLabel value="#{manualScopedBean.counter}" disabled="true"/>
+					<prime:outputLabel value="#{manualScopedBean.counter}" disabled="true"/>
+					<prime:outputLabel value="#{manualScopedBean.counter}" disabled="true"/>
+					<prime:outputLabel value="Scope existent: #{! empty sessionScope['ManualScope']}" />
+
+					<prime:outputLabel value="Custom scope: BeyondViewScope" />
+					<prime:outputLabel value="#{beyondViewScopedBean.counter}" disabled="true"/>
+					<prime:outputLabel value="#{beyondViewScopedBean.counter}" disabled="true"/>
+					<prime:outputLabel value="#{beyondViewScopedBean.counter}" disabled="true"/>
+					<prime:outputLabel value="This scope is slightly more persistent than @ViewScoped. It 'survives' a page reload forced by the F5 key (even if the user is adding a space behind the URL to get rid of the previous input)" />
 					
 					
-					<prime:commandButton value="Count!" action="#{countBean.onClick}" ajax="true" update="@form"/>
-					<prime:commandButton value="jump to another JSF page" action="secondPage.xhtml" />
-					<prime:commandButton value="start custom scope" onclick="alert('Not implemented yet');" />
-					<prime:commandButton value="destroy custom scope" onclick="alert('Not implemented yet');"/>
+					<prime:commandButton value="Count! (AJAX)" action="#{countBean.onClick}" ajax="true" update="@form"/>
+					<prime:commandButton value="Count! (Non-AJAX)" action="#{countBean.onClick}" ajax="false"/>
+					<prime:commandButton value="forced reload (F5 key)" onclick="window.location='index.xhtml '"/>
+					<prime:commandButton value="leave view scopes" action="secondPage.xhtml" ajax="false" />
+					<prime:outputLabel value=""></prime:outputLabel>
+					<prime:outputLabel value=""></prime:outputLabel>
+					<prime:commandButton value="start custom scope" actionListener="#{manualScopeManagerBean.createScope}" update="@form" />
+					<prime:commandButton value="destroy custom scope" actionListener="#{manualScopeManagerBean.destroyScope}" update="@form"/>
+					
 				</prime:panelGrid>
 			</prime:panel>
 			<prime:panel header="Spring Scope demo">

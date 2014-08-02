@@ -4,6 +4,9 @@
               xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
               version="2.2">
     <application>
+    	<el-resolver>de.beyondjava.examples.scopes.beyondViewScope.BeyondViewScopeELResolver</el-resolver>
+    	<el-resolver>de.beyondjava.examples.scopes.manualScope.ManualScopeELResolver</el-resolver>
+    
         <!-- <el-resolver>org.springframework.web.jsf.el.SpringBeanFacesELResolver</el-resolver>
          -->
     </application>
