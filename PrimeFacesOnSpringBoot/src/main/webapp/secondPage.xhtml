@@ -15,9 +15,11 @@
 	<h:body>
 		<h:form>
 			<prime:panel header="What do you see here?">
-				This is the second page of the scope demo. Each time you navigate to another
-				JSF page, the old view scope is discarded and a new one is create. In the example below the corresponding
-				counters start with 1 again.
+				<div style="height:50px">
+					This is the second page of the scope demo. Each time you navigate to another
+					JSF page, the old view scope is discarded and a new one is create. In the example below the corresponding
+					counters start with 1 again.
+				</div>
 			</prime:panel>
 		
 			<prime:panel header="Second JSF View of the scope demo">
@@ -29,45 +31,45 @@
 					<prime:outputLabel value="Comment" style="font-weight:bold"/>
 					
 					<prime:outputLabel value="Application scope" />
-					<prime:outputLabel value="#{applicationScopedBean.counter}" disabled="true"/>
-					<prime:outputLabel value="#{applicationScopedBean.counter}" disabled="true"/>
-					<prime:outputLabel value="#{applicationScopedBean.counter}" disabled="true"/>
+					<prime:outputLabel value="#{changeTracker.track(1, applicationScopedBean.counter)}" style="#{changeTracker.getStyle(1)}"/>
+					<prime:outputLabel value="#{changeTracker.track(2, applicationScopedBean.counter)}" style="#{changeTracker.getStyle(2)}"/>
+					<prime:outputLabel value="#{changeTracker.track(3, applicationScopedBean.counter)}" style="#{changeTracker.getStyle(3)}"/>
 					<prime:outputLabel value="Open a second browser to see the difference between session and application scope" />
 					
 					<prime:outputLabel value="Session scope" />
-					<prime:outputLabel value="#{sessionScopedBean.counter}" disabled="true"/>
-					<prime:outputLabel value="#{sessionScopedBean.counter}" disabled="true"/>
-					<prime:outputLabel value="#{sessionScopedBean.counter}" disabled="true"/>
+					<prime:outputLabel value="#{changeTracker.track(11, sessionScopedBean.counter)}" style="#{changeTracker.getStyle(11)}"/>
+					<prime:outputLabel value="#{changeTracker.track(12, sessionScopedBean.counter)}" style="#{changeTracker.getStyle(12)}"/>
+					<prime:outputLabel value="#{changeTracker.track(13, sessionScopedBean.counter)}" style="#{changeTracker.getStyle(13)}"/>
 					<prime:outputLabel value="Click 'Jump to second page' to see the difference to View scope" />
 					
 					<prime:outputLabel value="View scope" />
-					<prime:outputLabel value="#{viewScopedBean.counter}" disabled="true"/>
-					<prime:outputLabel value="#{viewScopedBean.counter}" disabled="true"/>
-					<prime:outputLabel value="#{viewScopedBean.counter}" disabled="true"/>
+					<prime:outputLabel value="#{changeTracker.track(21, viewScopedBean.counter)}" style="#{changeTracker.getStyle(21)}"/>
+					<prime:outputLabel value="#{changeTracker.track(22, viewScopedBean.counter)}" style="#{changeTracker.getStyle(22)}"/>
+					<prime:outputLabel value="#{changeTracker.track(23, viewScopedBean.counter)}" style="#{changeTracker.getStyle(23)}"/>
 					<prime:outputLabel value="Hitting the F5 key resets the counter. Clicking the AJAX button 'Count' doesn't." />
 					
 					<prime:outputLabel value="Request scope" />
-					<prime:outputLabel value="#{requestScopedBean.counter}" disabled="true"/>
-					<prime:outputLabel value="#{requestScopedBean.counter}" disabled="true"/>
-					<prime:outputLabel value="#{requestScopedBean.counter}" disabled="true"/>
+					<prime:outputLabel value="#{changeTracker.track(31, requestScopedBean.counter)}" style="#{changeTracker.getStyle(31)}"/>
+					<prime:outputLabel value="#{changeTracker.track(32, requestScopedBean.counter)}" style="#{changeTracker.getStyle(32)}"/>
+					<prime:outputLabel value="#{changeTracker.track(33, requestScopedBean.counter)}" style="#{changeTracker.getStyle(33)}"/>
 					<prime:outputLabel value="Only the values entered by the user or defined during processing the request are stored in the request scope." />
 
 					<prime:outputLabel value="None scope" />
-					<prime:outputLabel value="#{noneScopedBean.counter}" disabled="true"/>
-					<prime:outputLabel value="#{noneScopedBean.counter}" disabled="true"/>
-					<prime:outputLabel value="#{noneScopedBean.counter}" disabled="true"/>
+					<prime:outputLabel value="#{changeTracker.track(41, noneScopedBean.counter)}" style="#{changeTracker.getStyle(41)}"/>
+					<prime:outputLabel value="#{changeTracker.track(42, noneScopedBean.counter)}" style="#{changeTracker.getStyle(42)}"/>
+					<prime:outputLabel value="#{changeTracker.track(43, noneScopedBean.counter)}" style="#{changeTracker.getStyle(43)}"/>
 					<prime:outputLabel value="New instance every on every access" />
 
 					<prime:outputLabel value="Custom scope: ManualScope" />
-					<prime:outputLabel value="#{manualScopedBean.counter}" disabled="true"/>
-					<prime:outputLabel value="#{manualScopedBean.counter}" disabled="true"/>
-					<prime:outputLabel value="#{manualScopedBean.counter}" disabled="true"/>
+					<prime:outputLabel value="#{changeTracker.track(51, manualScopedBean.counter)}" style="#{changeTracker.getStyle(51)}"/>
+					<prime:outputLabel value="#{changeTracker.track(52, manualScopedBean.counter)}" style="#{changeTracker.getStyle(52)}"/>
+					<prime:outputLabel value="#{changeTracker.track(53, manualScopedBean.counter)}" style="#{changeTracker.getStyle(53)}"/>
 					<prime:outputLabel value="Scope existent: #{! empty sessionScope['ManualScope']}" />
 
 					<prime:outputLabel value="Custom scope: BeyondViewScope" />
-					<prime:outputLabel value="#{beyondViewScopedBean.counter}" disabled="true"/>
-					<prime:outputLabel value="#{beyondViewScopedBean.counter}" disabled="true"/>
-					<prime:outputLabel value="#{beyondViewScopedBean.counter}" disabled="true"/>
+					<prime:outputLabel value="#{changeTracker.track(61, beyondViewScopedBean.counter)}" style="#{changeTracker.getStyle(61)}"/>
+					<prime:outputLabel value="#{changeTracker.track(62, beyondViewScopedBean.counter)}" style="#{changeTracker.getStyle(62)}"/>
+					<prime:outputLabel value="#{changeTracker.track(63, beyondViewScopedBean.counter)}" style="#{changeTracker.getStyle(63)}"/>
 					<prime:outputLabel value="This scope is slightly more persistent than @ViewScoped. It 'survives' a page reload forced by the F5 key (even if the user is adding a space behind the URL to get rid of the previous input)" />
 					
 					

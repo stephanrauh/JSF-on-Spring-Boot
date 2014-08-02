@@ -19,11 +19,6 @@ public class ManualScopeELResolver extends ELResolver {
 			throw new PropertyNotFoundException();
 		}
 		
-		if (base instanceof ManualScope || base instanceof CustomScoped || property.equals(ManualScope.SCOPE_NAME)) {
-			System.out.println("base: " + base);
-			System.out.println("Propoerty:" + property);
-		}
-
 		FacesContext facesContext = (FacesContext) elContext.getContext(FacesContext.class);
 
 		if ((null == base) && ManualScope.SCOPE_NAME.equals(property.toString())) {

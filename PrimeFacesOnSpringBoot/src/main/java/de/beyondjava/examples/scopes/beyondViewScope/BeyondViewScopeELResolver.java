@@ -19,17 +19,11 @@ public class BeyondViewScopeELResolver extends ELResolver {
 			throw new PropertyNotFoundException();
 		}
 		
-		if (base instanceof BeyondViewScope || base instanceof CustomScoped || property.equals(BeyondViewScope.SCOPE_NAME)) {
-			System.out.println("base: " + base);
-			System.out.println("Propoerty:" + property);
-		}
-
 		FacesContext facesContext = (FacesContext) elContext.getContext(FacesContext.class);
 
 		if ((null == base) && BeyondViewScope.SCOPE_NAME.equals(property.toString())) {
 
 			// Scope is referenced directly
-
 			BeyondViewScope scope = getScope(facesContext);
 			elContext.setPropertyResolved(true);
 			return scope;
