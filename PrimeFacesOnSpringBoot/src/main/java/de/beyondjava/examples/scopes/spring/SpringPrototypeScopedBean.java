@@ -12,7 +12,6 @@ public class SpringPrototypeScopedBean implements Serializable {
 	private int counter=1;
 	
 	public int getCounter() {
-		System.out.println("PrototypeScopedBean");
 		return counter++;
 	}
 	

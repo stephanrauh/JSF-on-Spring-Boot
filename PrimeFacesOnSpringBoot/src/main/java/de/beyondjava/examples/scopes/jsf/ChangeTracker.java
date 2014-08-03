@@ -9,6 +9,7 @@ import javax.faces.bean.ManagedBean;
 @ManagedBean
 public class ChangeTracker {
 	private HashMap<Integer, Integer> previousValues=new HashMap<>();
+	private HashMap<Integer, String> previousStringValues=new HashMap<>();
 	private HashMap<Integer, Boolean> hasChanged=new HashMap<>();
 	
 	public int track(int index, int value) {
@@ -25,8 +26,23 @@ public class ChangeTracker {
 		return value;
 	}
 	
+	public String track(int index, String value) {
+		if (previousStringValues.containsKey(index)) {
+			String before = previousStringValues.get(index);
+			previousStringValues.remove(index);
+			previousStringValues.put(index, value);
+			hasChanged.put(index, !value.equals(before));
+
+		} else {
+			previousStringValues.put(index, value);
+			hasChanged.put(index, false);
+		}
+		return value;
+	}
+
+	
 	public String getStyle(int index) {
-		if (previousValues.containsKey(index)) {
+		if (hasChanged.containsKey(index)) {
 			if (hasChanged.get(index)) {
 				return "color:red;font-weight:bold;font-size:14px";
 			}

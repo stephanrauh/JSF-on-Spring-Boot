@@ -12,7 +12,6 @@ public class SpringRequestScopedBean implements Serializable {
 	private int counter=1;
 	
 	public int getCounter() {
-		System.out.println("RequestScopedBean");
 		return counter++;
 	}
 	

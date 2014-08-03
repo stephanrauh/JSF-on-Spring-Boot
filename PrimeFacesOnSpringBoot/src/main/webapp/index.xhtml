@@ -98,24 +98,24 @@
 					<prime:outputLabel value="#{changeTracker.track(103, springSessionScopedBean.counter)}" style="#{changeTracker.getStyle(103)}"/>
 					<prime:outputLabel value="Similar to @SessionScoped" />
 
-					<prime:outputLabel value="Session Scope - ProxyMode=TARGET_CLASS" />
+					<prime:outputLabel value="Session Scope + AOP" />
 					<prime:outputLabel value="#{changeTracker.track(111, springAOPSessionScopedBean.counter)}" style="#{changeTracker.getStyle(111)}"/>
 					<prime:outputLabel value="#{changeTracker.track(112, springAOPSessionScopedBean.counter)}" style="#{changeTracker.getStyle(112)}"/>
 					<prime:outputLabel value="#{changeTracker.track(113, springAOPSessionScopedBean.counter)}" style="#{changeTracker.getStyle(113)}"/>
-					<prime:outputLabel value="Similar to noneScope (+ AOP)" />
+					<prime:outputLabel value="Similar to noneScope. The arrow is added by an AOP advice." />
 
 
-					<prime:outputLabel value="Request Scope - ProxyMode" />
+					<prime:outputLabel value="Request Scope" />
 					<prime:outputLabel value="#{changeTracker.track(121, springRequestScopedBean.counter)}" style="#{changeTracker.getStyle(121)}"/>
 					<prime:outputLabel value="#{changeTracker.track(122, springRequestScopedBean.counter)}" style="#{changeTracker.getStyle(122)}"/>
 					<prime:outputLabel value="#{changeTracker.track(123, springRequestScopedBean.counter)}" style="#{changeTracker.getStyle(123)}"/>
 					<prime:outputLabel value="Similar to @RequestScoped" />
 
-					<prime:outputLabel value="Request Scope - ProxyMode=TARGET_CLASS" />
+					<prime:outputLabel value="Request Scope - AOP" />
 					<prime:outputLabel value="#{changeTracker.track(131, springAOPRequestScopedBean.counter)}" style="#{changeTracker.getStyle(131)}"/>
 					<prime:outputLabel value="#{changeTracker.track(132, springAOPRequestScopedBean.counter)}" style="#{changeTracker.getStyle(132)}"/>
 					<prime:outputLabel value="#{changeTracker.track(133, springAOPRequestScopedBean.counter)}" style="#{changeTracker.getStyle(133)}"/>
-					<prime:outputLabel value="Similar to @RequestScoped (+ AOP)" />
+					<prime:outputLabel value="Similar to @RequestScoped. The arrow is added by an AOP advice." />
 
 					<prime:outputLabel value="Prototype Scope" />
 					<prime:outputLabel value="#{changeTracker.track(141, springPrototypeScopedBean.counter)}" style="#{changeTracker.getStyle(141)}"/>
@@ -123,11 +123,11 @@
 					<prime:outputLabel value="#{changeTracker.track(143, springPrototypeScopedBean.counter)}" style="#{changeTracker.getStyle(143)}"/>
 					<prime:outputLabel value="equivalent to @NoneScoped" />
 
-					<prime:outputLabel value="Prototype Scope  - ProxyMode=TARGET_CLASS" />
+					<prime:outputLabel value="Prototype Scope + AOP" />
 					<prime:outputLabel value="#{changeTracker.track(151, springAOPPrototypeScopedBean.counter)}" style="#{changeTracker.getStyle(151)}"/>
 					<prime:outputLabel value="#{changeTracker.track(152, springAOPPrototypeScopedBean.counter)}" style="#{changeTracker.getStyle(152)}"/>
 					<prime:outputLabel value="#{changeTracker.track(153, springAOPPrototypeScopedBean.counter)}" style="#{changeTracker.getStyle(153)}"/>
-					<prime:outputLabel value="equivalent to @NoneScoped (+AOP)" />
+					<prime:outputLabel value="equivalent to @NoneScoped. The arrow is added by an AOP advice." />
 
 
 				</prime:panelGrid>

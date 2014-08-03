@@ -12,7 +12,6 @@ public class SpringSessionScopedBean implements Serializable {
 	private int counter=1;
 	
 	public int getCounter() {
-		System.out.println("SessionScopedBean");
 		return counter++;
 	}
 	

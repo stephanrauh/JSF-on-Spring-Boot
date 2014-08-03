@@ -10,11 +10,10 @@ import org.springframework.stereotype.Component;
 @Scope(proxyMode=ScopedProxyMode.TARGET_CLASS, value="request")
 public class SpringAOPRequestScopedBean implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private int counter=1;
+	public int counter=0;
 	
-	public int getCounter() {
-		System.out.println("AOPRequestScopedBean - ProxyMode=TARGET_CLASS");
-		return counter++;
+	public String getCounter() {
+		return String.valueOf(++counter);
 	}
 	
 	public void setCounter(int counter) {
