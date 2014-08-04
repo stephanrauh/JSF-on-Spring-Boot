@@ -22,57 +22,7 @@
 				</div>
 			</prime:panel>
 			<prime:panel header="JSF 2.2 Scope demo">
-				<prime:panelGrid columns="5">
-					<prime:outputLabel value="Scope" style="font-weight:bold" />
-					<prime:outputLabel value="First call" style="font-weight:bold" />
-					<prime:outputLabel value="Second call" style="font-weight:bold"/>
-					<prime:outputLabel value="Third call" style="font-weight:bold"/>
-					<prime:outputLabel value="Comment" style="font-weight:bold"/>
-					
-					<prime:outputLabel value="Application scope" />
-					<prime:outputLabel value="#{changeTracker.track(1, applicationScopedBean.counter)}" style="#{changeTracker.getStyle(1)}"/>
-					<prime:outputLabel value="#{changeTracker.track(2, applicationScopedBean.counter)}" style="#{changeTracker.getStyle(2)}"/>
-					<prime:outputLabel value="#{changeTracker.track(3, applicationScopedBean.counter)}" style="#{changeTracker.getStyle(3)}"/>
-					<prime:outputLabel value="Open a second browser to see the difference between session and application scope" />
-					
-					<prime:outputLabel value="Session scope" />
-					<prime:outputLabel value="#{changeTracker.track(11, sessionScopedBean.counter)}" style="#{changeTracker.getStyle(11)}"/>
-					<prime:outputLabel value="#{changeTracker.track(12, sessionScopedBean.counter)}" style="#{changeTracker.getStyle(12)}"/>
-					<prime:outputLabel value="#{changeTracker.track(13, sessionScopedBean.counter)}" style="#{changeTracker.getStyle(13)}"/>
-					<prime:outputLabel value="Click 'Jump to second page' to see the difference to View scope" />
-					
-					<prime:outputLabel value="View scope" />
-					<prime:outputLabel value="#{changeTracker.track(21, viewScopedBean.counter)}" style="#{changeTracker.getStyle(21)}"/>
-					<prime:outputLabel value="#{changeTracker.track(22, viewScopedBean.counter)}" style="#{changeTracker.getStyle(22)}"/>
-					<prime:outputLabel value="#{changeTracker.track(23, viewScopedBean.counter)}" style="#{changeTracker.getStyle(23)}"/>
-					<prime:outputLabel value="Adding a space to the URL and hitting the F5 key resets the counter. Clicking the AJAX button 'Count' doesn't. Plus, due to a setting in the web.xml opening a new window or a new tab in your browser creates a new @ViewScope." />
-					
-					<prime:outputLabel value="Request scope" />
-					<prime:outputLabel value="#{changeTracker.track(31, requestScopedBean.counter)}" style="#{changeTracker.getStyle(31)}"/>
-					<prime:outputLabel value="#{changeTracker.track(32, requestScopedBean.counter)}" style="#{changeTracker.getStyle(32)}"/>
-					<prime:outputLabel value="#{changeTracker.track(33, requestScopedBean.counter)}" style="#{changeTracker.getStyle(33)}"/>
-					<prime:outputLabel value="Only the values entered by the user or defined during processing the request are stored in the request scope." />
-
-					<prime:outputLabel value="None scope" />
-					<prime:outputLabel value="#{changeTracker.track(41, noneScopedBean.counter)}" style="#{changeTracker.getStyle(41)}"/>
-					<prime:outputLabel value="#{changeTracker.track(42, noneScopedBean.counter)}" style="#{changeTracker.getStyle(42)}"/>
-					<prime:outputLabel value="#{changeTracker.track(43, noneScopedBean.counter)}" style="#{changeTracker.getStyle(43)}"/>
-					<prime:outputLabel value="New instance every on every access" />
-
-					<prime:outputLabel value="Custom scope: ManualScope" />
-					<prime:outputLabel value="#{changeTracker.track(51, manualScopedBean.counter)}" style="#{changeTracker.getStyle(51)}"/>
-					<prime:outputLabel value="#{changeTracker.track(52, manualScopedBean.counter)}" style="#{changeTracker.getStyle(52)}"/>
-					<prime:outputLabel value="#{changeTracker.track(53, manualScopedBean.counter)}" style="#{changeTracker.getStyle(53)}"/>
-					<prime:outputLabel value="Scope existent: #{! empty sessionScope['ManualScope']}" />
-
-					<prime:outputLabel value="Custom scope: BeyondViewScope" />
-					<prime:outputLabel value="#{changeTracker.track(61, beyondViewScopedBean.counter)}" style="#{changeTracker.getStyle(61)}"/>
-					<prime:outputLabel value="#{changeTracker.track(62, beyondViewScopedBean.counter)}" style="#{changeTracker.getStyle(62)}"/>
-					<prime:outputLabel value="#{changeTracker.track(63, beyondViewScopedBean.counter)}" style="#{changeTracker.getStyle(63)}"/>
-					<prime:outputLabel value="This scope is slightly more persistent than @ViewScoped. It 'survives' a page reload forced by the F5 key (even if the user is adding a space behind the URL to get rid of the previous input)" />
-					
-					
-					<prime:commandButton value="Count! (AJAX)" action="#{countBean.onClick}" ajax="true" update="@form" />
+								<prime:commandButton value="Count! (AJAX)" action="#{countBean.onClick}" ajax="true" update="@form" />
 					<prime:commandButton value="Count! (Non-AJAX)" action="#{countBean.onClick}" ajax="false" style="width:150px"/>
 					<prime:commandButton value="forced reload (F5 key)" onclick="window.location='index.xhtml '" style="width:170px"/>
 					<prime:commandButton value="leave view scopes" action="secondPage.xhtml" ajax="false" style="width:150px"/>
@@ -80,55 +30,110 @@
 					<prime:outputLabel value=""></prime:outputLabel>
 					<prime:commandButton value="start custom scope" actionListener="#{manualScopeManagerBean.createScope}" update="@form"  style="width:150px"/>
 					<prime:commandButton value="destroy custom scope" actionListener="#{manualScopeManagerBean.destroyScope}" update="@form" style="width:170px"/>
-					
-				</prime:panelGrid>
-			</prime:panel>
-			<prime:panel header="Spring Scope demo">
+			
 				<prime:panelGrid columns="5">
-										<prime:outputLabel value="Scope" style="font-weight:bold" />
+					<prime:outputLabel value="JSF Scopes" style="font-weight:bold" />
 					<prime:outputLabel value="First call" style="font-weight:bold" />
 					<prime:outputLabel value="Second call" style="font-weight:bold"/>
 					<prime:outputLabel value="Third call" style="font-weight:bold"/>
 					<prime:outputLabel value="Comment" style="font-weight:bold"/>
 					
+					<prime:outputLabel value="JSF application scope" />
+					<prime:outputLabel value="#{changeTracker.track(1, applicationScopedBean.counter)}" style="#{changeTracker.getStyle(1)}"/>
+					<prime:outputLabel value="#{changeTracker.track(2, applicationScopedBean.counter)}" style="#{changeTracker.getStyle(2)}"/>
+					<prime:outputLabel value="#{changeTracker.track(3, applicationScopedBean.counter)}" style="#{changeTracker.getStyle(3)}"/>
+					<prime:outputLabel value="Open a second browser to see the difference between session and application scope" />
+					
+					<prime:outputLabel value="JSF session scope" />
+					<prime:outputLabel value="#{changeTracker.track(11, sessionScopedBean.counter)}" style="#{changeTracker.getStyle(11)}"/>
+					<prime:outputLabel value="#{changeTracker.track(12, sessionScopedBean.counter)}" style="#{changeTracker.getStyle(12)}"/>
+					<prime:outputLabel value="#{changeTracker.track(13, sessionScopedBean.counter)}" style="#{changeTracker.getStyle(13)}"/>
+					<prime:outputLabel value="Click 'Jump to second page' to see the difference to View scope" />
+					
+					<prime:outputLabel value="JSF view scope" />
+					<prime:outputLabel value="#{changeTracker.track(21, viewScopedBean.counter)}" style="#{changeTracker.getStyle(21)}"/>
+					<prime:outputLabel value="#{changeTracker.track(22, viewScopedBean.counter)}" style="#{changeTracker.getStyle(22)}"/>
+					<prime:outputLabel value="#{changeTracker.track(23, viewScopedBean.counter)}" style="#{changeTracker.getStyle(23)}"/>
+					<prime:outputLabel value="Adding a space to the URL and hitting the F5 key resets the counter. Clicking the AJAX button 'Count' doesn't. Plus, due to a setting in the web.xml opening a new window or a new tab in your browser creates a new @ViewScope." />
+					
+					<prime:outputLabel value="JSF request scope" />
+					<prime:outputLabel value="#{changeTracker.track(31, requestScopedBean.counter)}" style="#{changeTracker.getStyle(31)}"/>
+					<prime:outputLabel value="#{changeTracker.track(32, requestScopedBean.counter)}" style="#{changeTracker.getStyle(32)}"/>
+					<prime:outputLabel value="#{changeTracker.track(33, requestScopedBean.counter)}" style="#{changeTracker.getStyle(33)}"/>
+					<prime:outputLabel value="Only the values entered by the user or defined during processing the request are stored in the request scope." />
 
-					<prime:outputLabel value="Session Scope" />
+					<prime:outputLabel value="JSF none scope" />
+					<prime:outputLabel value="#{changeTracker.track(41, noneScopedBean.counter)}" style="#{changeTracker.getStyle(41)}"/>
+					<prime:outputLabel value="#{changeTracker.track(42, noneScopedBean.counter)}" style="#{changeTracker.getStyle(42)}"/>
+					<prime:outputLabel value="#{changeTracker.track(43, noneScopedBean.counter)}" style="#{changeTracker.getStyle(43)}"/>
+					<prime:outputLabel value="New instance every on every access" />
+
+					<prime:outputLabel value="JSF custom scope: ManualScope" />
+					<prime:outputLabel value="#{changeTracker.track(51, manualScopedBean.counter)}" style="#{changeTracker.getStyle(51)}"/>
+					<prime:outputLabel value="#{changeTracker.track(52, manualScopedBean.counter)}" style="#{changeTracker.getStyle(52)}"/>
+					<prime:outputLabel value="#{changeTracker.track(53, manualScopedBean.counter)}" style="#{changeTracker.getStyle(53)}"/>
+					<prime:outputLabel value="Scope existent: #{! empty sessionScope['ManualScope']}" />
+
+					<prime:outputLabel value="JSF custom scope: BeyondViewScope" />
+					<prime:outputLabel value="#{changeTracker.track(61, beyondViewScopedBean.counter)}" style="#{changeTracker.getStyle(61)}"/>
+					<prime:outputLabel value="#{changeTracker.track(62, beyondViewScopedBean.counter)}" style="#{changeTracker.getStyle(62)}"/>
+					<prime:outputLabel value="#{changeTracker.track(63, beyondViewScopedBean.counter)}" style="#{changeTracker.getStyle(63)}"/>
+					<prime:outputLabel value="This scope is slightly more persistent than @ViewScoped. It 'survives' a page reload forced by the F5 key (even if the user is adding a space behind the URL to get rid of the previous input)" />
+					
+  				    <prime:outputLabel value="Spring scopes" style="font-weight:bold" />
+					<prime:outputLabel value="First call" style="font-weight:bold" />
+					<prime:outputLabel value="Second call" style="font-weight:bold"/>
+					<prime:outputLabel value="Third call" style="font-weight:bold"/>
+					<prime:outputLabel value="Comment" style="font-weight:bold"/>
+
+					<prime:outputLabel value="Spring session Scope" />
 					<prime:outputLabel value="#{changeTracker.track(101, springSessionScopedBean.counter)}" style="#{changeTracker.getStyle(101)}"/>
 					<prime:outputLabel value="#{changeTracker.track(102, springSessionScopedBean.counter)}" style="#{changeTracker.getStyle(102)}"/>
 					<prime:outputLabel value="#{changeTracker.track(103, springSessionScopedBean.counter)}" style="#{changeTracker.getStyle(103)}"/>
 					<prime:outputLabel value="Similar to @SessionScoped" />
 
-					<prime:outputLabel value="Session Scope + AOP" />
+					<prime:outputLabel value="Spring session Scope + AOP" />
 					<prime:outputLabel value="#{changeTracker.track(111, springAOPSessionScopedBean.counter)}" style="#{changeTracker.getStyle(111)}"/>
 					<prime:outputLabel value="#{changeTracker.track(112, springAOPSessionScopedBean.counter)}" style="#{changeTracker.getStyle(112)}"/>
 					<prime:outputLabel value="#{changeTracker.track(113, springAOPSessionScopedBean.counter)}" style="#{changeTracker.getStyle(113)}"/>
 					<prime:outputLabel value="Similar to noneScope. The arrow is added by an AOP advice." />
 
 
-					<prime:outputLabel value="Request Scope" />
+					<prime:outputLabel value="Spring request Scope" />
 					<prime:outputLabel value="#{changeTracker.track(121, springRequestScopedBean.counter)}" style="#{changeTracker.getStyle(121)}"/>
 					<prime:outputLabel value="#{changeTracker.track(122, springRequestScopedBean.counter)}" style="#{changeTracker.getStyle(122)}"/>
 					<prime:outputLabel value="#{changeTracker.track(123, springRequestScopedBean.counter)}" style="#{changeTracker.getStyle(123)}"/>
 					<prime:outputLabel value="Similar to @RequestScoped" />
 
-					<prime:outputLabel value="Request Scope - AOP" />
+					<prime:outputLabel value="Spring request Scope - AOP" />
 					<prime:outputLabel value="#{changeTracker.track(131, springAOPRequestScopedBean.counter)}" style="#{changeTracker.getStyle(131)}"/>
 					<prime:outputLabel value="#{changeTracker.track(132, springAOPRequestScopedBean.counter)}" style="#{changeTracker.getStyle(132)}"/>
 					<prime:outputLabel value="#{changeTracker.track(133, springAOPRequestScopedBean.counter)}" style="#{changeTracker.getStyle(133)}"/>
 					<prime:outputLabel value="Similar to @RequestScoped. The arrow is added by an AOP advice." />
 
-					<prime:outputLabel value="Prototype Scope" />
+					<prime:outputLabel value="Spring prototype Scope" />
 					<prime:outputLabel value="#{changeTracker.track(141, springPrototypeScopedBean.counter)}" style="#{changeTracker.getStyle(141)}"/>
 					<prime:outputLabel value="#{changeTracker.track(142, springPrototypeScopedBean.counter)}" style="#{changeTracker.getStyle(142)}"/>
 					<prime:outputLabel value="#{changeTracker.track(143, springPrototypeScopedBean.counter)}" style="#{changeTracker.getStyle(143)}"/>
 					<prime:outputLabel value="equivalent to @NoneScoped" />
 
-					<prime:outputLabel value="Prototype Scope + AOP" />
+					<prime:outputLabel value="Spring prototype Scope + AOP" />
 					<prime:outputLabel value="#{changeTracker.track(151, springAOPPrototypeScopedBean.counter)}" style="#{changeTracker.getStyle(151)}"/>
 					<prime:outputLabel value="#{changeTracker.track(152, springAOPPrototypeScopedBean.counter)}" style="#{changeTracker.getStyle(152)}"/>
 					<prime:outputLabel value="#{changeTracker.track(153, springAOPPrototypeScopedBean.counter)}" style="#{changeTracker.getStyle(153)}"/>
 					<prime:outputLabel value="equivalent to @NoneScoped. The arrow is added by an AOP advice." />
 
+  				    <prime:outputLabel value="JSF Beans containing Spring Beans" style="font-weight:bold" />
+					<prime:outputLabel value="First call" style="font-weight:bold" />
+					<prime:outputLabel value="Second call" style="font-weight:bold"/>
+					<prime:outputLabel value="Third call" style="font-weight:bold"/>
+					<prime:outputLabel value="Comment" style="font-weight:bold"/>
+
+					<prime:outputLabel value="JSF view scope contains Spring prototype" />
+					<prime:outputLabel value="#{changeTracker.track(201, viewScopeContainsPrototypeScope.counter)}" style="#{changeTracker.getStyle(201)}"/>
+					<prime:outputLabel value="#{changeTracker.track(202, viewScopeContainsPrototypeScope.counter)}" style="#{changeTracker.getStyle(202)}"/>
+					<prime:outputLabel value="#{changeTracker.track(203, viewScopeContainsPrototypeScope.counter)}" style="#{changeTracker.getStyle(203)}"/>
+					<prime:outputLabel value="Similar to @SessionScoped" />
 
 				</prime:panelGrid>
 			</prime:panel>
