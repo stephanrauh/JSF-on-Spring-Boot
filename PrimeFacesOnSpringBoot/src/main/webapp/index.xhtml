@@ -22,7 +22,7 @@
 				</div>
 			</prime:panel>
 			<prime:panel header="JSF 2.2 Scope demo">
-								<prime:commandButton value="Count! (AJAX)" action="#{countBean.onClick}" ajax="true" update="@form" />
+					<prime:commandButton value="Count! (AJAX)" action="#{countBean.onClick}" ajax="true" update="@form" />
 					<prime:commandButton value="Count! (Non-AJAX)" action="#{countBean.onClick}" ajax="false" style="width:150px"/>
 					<prime:commandButton value="forced reload (F5 key)" onclick="window.location='index.xhtml '" style="width:170px"/>
 					<prime:commandButton value="leave view scopes" action="secondPage.xhtml" ajax="false" style="width:150px"/>
@@ -54,7 +54,7 @@
 					<prime:outputLabel value="#{changeTracker.track(21, viewScopedBean.counter)}" style="#{changeTracker.getStyle(21)}"/>
 					<prime:outputLabel value="#{changeTracker.track(22, viewScopedBean.counter)}" style="#{changeTracker.getStyle(22)}"/>
 					<prime:outputLabel value="#{changeTracker.track(23, viewScopedBean.counter)}" style="#{changeTracker.getStyle(23)}"/>
-					<prime:outputLabel value="Adding a space to the URL and hitting the F5 key resets the counter. Clicking the AJAX button 'Count' doesn't. Plus, due to a setting in the web.xml opening a new window or a new tab in your browser creates a new @ViewScope." />
+					<prime:outputLabel value="Adding a space to the URL and hitting the F5 key resets the counter. Clicking the AJAX button 'Count' doesn't." />
 					
 					<prime:outputLabel value="JSF request scope" />
 					<prime:outputLabel value="#{changeTracker.track(31, requestScopedBean.counter)}" style="#{changeTracker.getStyle(31)}"/>
@@ -129,11 +129,41 @@
 					<prime:outputLabel value="Third call" style="font-weight:bold"/>
 					<prime:outputLabel value="Comment" style="font-weight:bold"/>
 
+					<prime:outputLabel value="JSF view scope contains Spring session" />
+					<prime:outputLabel value="#{changeTracker.track(241, viewScopeContainsSessionScope.counter)}" style="#{changeTracker.getStyle(241)}"/>
+					<prime:outputLabel value="#{changeTracker.track(242, viewScopeContainsSessionScope.counter)}" style="#{changeTracker.getStyle(242)}"/>
+					<prime:outputLabel value="#{changeTracker.track(243, viewScopeContainsSessionScope.counter)}" style="#{changeTracker.getStyle(243)}"/>
+					<prime:outputLabel value="A JSF controller that contains a Spring bean of Session scope." />
+
+					<prime:outputLabel value="JSF view scope contains AOP Spring session" />
+					<prime:outputLabel value="#{changeTracker.track(251, viewScopeContainsAOPSessionScope.counter)}" style="#{changeTracker.getStyle(251)}"/>
+					<prime:outputLabel value="#{changeTracker.track(252, viewScopeContainsAOPSessionScope.counter)}" style="#{changeTracker.getStyle(252)}"/>
+					<prime:outputLabel value="#{changeTracker.track(253, viewScopeContainsAOPSessionScope.counter)}" style="#{changeTracker.getStyle(253)}"/>
+					<prime:outputLabel value="A JSF controller that contains a Spring bean of Session scope.  The arrow is added by a Spring AOP advice." />
+
+					<prime:outputLabel value="JSF view scope contains Spring request" />
+					<prime:outputLabel value="#{changeTracker.track(221, viewScopeContainsRequestScope.counter)}" style="#{changeTracker.getStyle(221)}"/>
+					<prime:outputLabel value="#{changeTracker.track(222, viewScopeContainsRequestScope.counter)}" style="#{changeTracker.getStyle(222)}"/>
+					<prime:outputLabel value="#{changeTracker.track(223, viewScopeContainsRequestScope.counter)}" style="#{changeTracker.getStyle(223)}"/>
+					<prime:outputLabel value="A JSF controller that contains a Spring bean of Request scope." />
+
+					<prime:outputLabel value="JSF view scope contains AOP Spring request" />
+					<prime:outputLabel value="#{changeTracker.track(231, viewScopeContainsAOPRequestScope.counter)}" style="#{changeTracker.getStyle(231)}"/>
+					<prime:outputLabel value="#{changeTracker.track(232, viewScopeContainsAOPRequestScope.counter)}" style="#{changeTracker.getStyle(232)}"/>
+					<prime:outputLabel value="#{changeTracker.track(233, viewScopeContainsAOPRequestScope.counter)}" style="#{changeTracker.getStyle(233)}"/>
+					<prime:outputLabel value="A JSF controller that contains a Spring bean of Request scope.  The arrow is added by a Spring AOP advice." />
+
 					<prime:outputLabel value="JSF view scope contains Spring prototype" />
 					<prime:outputLabel value="#{changeTracker.track(201, viewScopeContainsPrototypeScope.counter)}" style="#{changeTracker.getStyle(201)}"/>
 					<prime:outputLabel value="#{changeTracker.track(202, viewScopeContainsPrototypeScope.counter)}" style="#{changeTracker.getStyle(202)}"/>
 					<prime:outputLabel value="#{changeTracker.track(203, viewScopeContainsPrototypeScope.counter)}" style="#{changeTracker.getStyle(203)}"/>
-					<prime:outputLabel value="Similar to @SessionScoped" />
+					<prime:outputLabel value="A JSF controller that contains a Spring bean of prototype scope." />
+
+					<prime:outputLabel value="JSF view scope contains AOP Spring prototype" />
+					<prime:outputLabel value="#{changeTracker.track(211, viewScopeContainsAOPPrototypeScope.counter)}" style="#{changeTracker.getStyle(211)}"/>
+					<prime:outputLabel value="#{changeTracker.track(212, viewScopeContainsAOPPrototypeScope.counter)}" style="#{changeTracker.getStyle(212)}"/>
+					<prime:outputLabel value="#{changeTracker.track(213, viewScopeContainsAOPPrototypeScope.counter)}" style="#{changeTracker.getStyle(213)}"/>
+					<prime:outputLabel value="A JSF controller that contains a Spring bean of prototype scope.  The arrow is added by a Spring AOP advice. Note that AOP causes frequent bean creation." />
 
 				</prime:panelGrid>
 			</prime:panel>

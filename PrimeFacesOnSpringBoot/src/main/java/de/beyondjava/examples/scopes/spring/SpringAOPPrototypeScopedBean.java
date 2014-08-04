@@ -10,6 +10,11 @@ import org.springframework.stereotype.Component;
 @Scope(proxyMode=ScopedProxyMode.TARGET_CLASS, value="prototype")
 public class SpringAOPPrototypeScopedBean implements Serializable {
 	private static final long serialVersionUID = 1L;
+	
+	public SpringAOPPrototypeScopedBean() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	public int counter=0;
 	
 	public String getCounter() {
