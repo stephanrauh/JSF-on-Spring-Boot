@@ -5,7 +5,6 @@ import javax.faces.webapp.FacesServlet;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
 import org.springframework.boot.context.embedded.ServletRegistrationBean;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
@@ -13,7 +12,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ComponentScan(basePackages={"de"})
+@ComponentScan(basePackages={""})
 @EnableAutoConfiguration
 public class Main extends SpringBootServletInitializer {
 
@@ -29,12 +28,8 @@ public class Main extends SpringBootServletInitializer {
     @Bean
     public ServletRegistrationBean servletRegistrationBean() {
         FacesServlet servlet = new FacesServlet();
-        ServletRegistrationBean servletRegistrationBean = new ServletRegistrationBean(servlet, "*.xhtml", "*.jsf");
+        ServletRegistrationBean servletRegistrationBean = new ServletRegistrationBean(servlet, "*.jsf");
 		return servletRegistrationBean;
     }
     
-    @Bean
-    public EmbeddedServletContainerCustomizer embeddedServletCustomizer() {
-      return new MyEmbeddedServletContainerCustomizer();
-    }
 }
