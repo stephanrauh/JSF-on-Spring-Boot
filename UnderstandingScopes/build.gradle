@@ -1,0 +1,47 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'war'
+apply plugin: 'jetty'
+
+sourceCompatibility = 1.8
+version = '1.0'
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'SpringViewScope', 
+        'Implementation-Version': version
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven { url "http://repository.primefaces.org" }
+}
+
+dependencies {
+    compile group: "org.springframework.boot", name: "spring-boot-starter", version: '1.1.4.RELEASE'
+    compile group: "org.springframework.boot", name: "spring-boot-starter-aop", version: '1.1.4.RELEASE'
+    
+	compile group: "org.springframework", name: "spring-web", version: "4.0.2.RELEASE"
+	
+	compile group: "org.apache.tomcat.embed", name: "tomcat-embed-core", version: '7.0.34'
+	compile group: "org.apache.tomcat.embed", name: "tomcat-embed-logging-juli", version: '7.0.34'
+	compile group: "org.apache.tomcat.embed", name: "tomcat-embed-jasper", version: '7.0.34'
+	
+	compile group: "org.primefaces", name: "primefaces", version: "5.0"
+	compile group: "com.sun.faces", name: "jsf-api", version: "2.+"
+	compile group: "com.sun.faces", name: "jsf-impl", version: "2.+"
+    //testCompile group: 'junit', name: 'junit', version: '4.+'
+}
+
+test {
+    systemProperties 'property': 'value'
+}
+
+uploadArchives {
+    repositories {
+       flatDir {
+           dirs 'repos'
+       }
+    }
+}
