@@ -1,6 +1,7 @@
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'war'
+apply plugin: 'maven'
 
 sourceCompatibility = 1.8
 version = '1.0'
@@ -30,5 +31,20 @@ dependencies {
 	compile group: "org.primefaces", name: "primefaces", version: "5.0"
 	compile group: "com.sun.faces", name: "jsf-api", version: "2.+"
 	compile group: "com.sun.faces", name: "jsf-impl", version: "2.+"
+}
+
+task writeNewPom << {
+    pom {
+        project {
+            inceptionYear '2014'
+            licenses {
+                license {
+                    name 'GNU General Public License, Version 3'
+                    url 'http://www.gnu.org/licenses'
+                    distribution 'repo'
+                }
+            }
+        }
+    }.writeTo("$buildDir/newpom.xml")
 }
 

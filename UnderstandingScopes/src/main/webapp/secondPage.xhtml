@@ -99,6 +99,17 @@
 					<prime:outputLabel value="#{changeTracker.track(113, springAOPSessionScopedBean.counter)}" style="#{changeTracker.getStyle(113)}"/>
 					<prime:outputLabel value="Similar to noneScope. The arrow is added by an AOP advice." />
 
+					<prime:outputLabel value="Spring view Scope (by Neil Griffin)" />
+					<prime:outputLabel value="#{changeTracker.track(161, springViewScopedBean.counter)}" style="#{changeTracker.getStyle(161)}"/>
+					<prime:outputLabel value="#{changeTracker.track(162, springViewScopedBean.counter)}" style="#{changeTracker.getStyle(162)}"/>
+					<prime:outputLabel value="#{changeTracker.track(163, springViewScopedBean.counter)}" style="#{changeTracker.getStyle(163)}"/>
+					<prime:outputLabel value="Similar to @ViewScoped" />
+
+					<prime:outputLabel value="Spring view Scope - AOP" />
+					<prime:outputLabel value="#{changeTracker.track(171, springAOPViewScopedBean.counter)}" style="#{changeTracker.getStyle(171)}"/>
+					<prime:outputLabel value="#{changeTracker.track(172, springAOPViewScopedBean.counter)}" style="#{changeTracker.getStyle(172)}"/>
+					<prime:outputLabel value="#{changeTracker.track(173, springAOPViewScopedBean.counter)}" style="#{changeTracker.getStyle(173)}"/>
+					<prime:outputLabel value="Similar to @ViewScoped. The arrow is added by an AOP advice." />
 
 					<prime:outputLabel value="Spring request Scope" />
 					<prime:outputLabel value="#{changeTracker.track(121, springRequestScopedBean.counter)}" style="#{changeTracker.getStyle(121)}"/>
