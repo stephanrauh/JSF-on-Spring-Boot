@@ -1,0 +1,28 @@
+<f:view xmlns="http://www.w3c.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core"
+  xmlns:h="http://java.sun.com/jsf/html" xmlns:prime="http://primefaces.org/ui"
+  >
+  <h:head />
+  <h:body>
+    <h:form prependId="false">
+      	This file illustrates PrimeFaces bug 6184 (see https://code.google.com/p/primefaces/issues/detail?id=6184).<br />
+      	<br />
+      	After clicking the button there should be two error messages behind the input field.<br />
+      	<ul>
+      	<li>Using the Client Side Validation, both error messages are displayed behind the input field.</li>
+      	<li>Using Server Side Validation, only one message is displayed. Unfortunately, the second message is an error message, but it is suppressed.</li>
+      	</ul>
+      	To activate server side validation, you have to set the parameter in de.beyondjava.main.Initializer (line 15) 
+      	and you have to remove the annotations of de.beyondjava.jsf.sample.searchExpressions.SmallNumberBean (lines 29 and 30).
+      	<br /><br />
+      <h:panelGrid columns="3">
+      	
+      	
+        <prime:outputLabel for="@next" value="small number (less than 10)" />
+        <prime:inputText value="#{smallNumberBean.smallNumber}" required="true" label="small number" id="smallNumberID"/>
+        <prime:message for="@previous" />
+        <prime:commandButton validateClient="true" value="validate" action="#{smallNumberBean.showErrors}"
+          update="@parent:@parent" />
+      </h:panelGrid>
+    </h:form>
+  </h:body>
+</f:view>
