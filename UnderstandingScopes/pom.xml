@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>de.beyondjava</groupId>
+  <artifactId>UnderstandingScopes</artifactId>
+  <version>1.0</version>
+  <inceptionYear>2014</inceptionYear>
+  <licenses>
+    <license>
+      <name>GNU General Public License, Version 3</name>
+      <url>http://www.gnu.org/licenses</url>
+    </license>
+  </licenses>
+  <dependencies>
+  
+    <dependency><groupId>org.springframework.boot</groupId><artifactId>spring-boot-starter</artifactId><version>1.1.4.RELEASE</version></dependency>
+    <dependency><groupId>org.springframework.boot</groupId><artifactId>spring-boot-starter-aop</artifactId><version>1.1.4.RELEASE</version></dependency>
+	<dependency><groupId>org.springframework</groupId><artifactId>spring-web</artifactId><version>4.0.2.RELEASE</version></dependency>
+	<dependency><groupId>org.apache.tomcat.embed</groupId><artifactId>tomcat-embed-core</artifactId><version>7.0.34</version></dependency>
+	<dependency><groupId>org.apache.tomcat.embed</groupId><artifactId>tomcat-embed-logging-juli</artifactId><version>7.0.34</version></dependency>
+	<dependency><groupId>org.apache.tomcat.embed</groupId><artifactId>tomcat-embed-jasper</artifactId><version>7.0.34</version></dependency>
+	<dependency><groupId>org.primefaces</groupId><artifactId>primefaces</artifactId><version>5.0</version></dependency>
+	<dependency><groupId>com.sun.faces</groupId><artifactId>jsf-api</artifactId><version>2.2.8-02</version></dependency>
+	<dependency><groupId>com.sun.faces</groupId><artifactId>jsf-impl</artifactId><version>2.2.8-02</version></dependency>
+  
+
+  </dependencies>
+</project>
