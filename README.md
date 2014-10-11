@@ -1,7 +1,9 @@
 JSF on Spring Boot
 ==================
 
-Small template projects to get you started with JSF and Spring Boot quickly.
+Small template projects to get you started with JSF and Spring Boot quickly. You may
+also be interested to read the article describing the project on the 
+<a href="http://www.beyondjava.net/blog/jsf-2-2-primefaces-5-spring-boot/">BeyondJava.net blog</a>.
 
 Run the Main.java class to start the server. The corresponding URL is http://localhost/index.jsf.
 
