@@ -1,4 +1,4 @@
-JSF-on-Spring-Boot
+JSF on Spring Boot
 ==================
 
 Small template projects to get you started with JSF and Spring Boot quickly.
