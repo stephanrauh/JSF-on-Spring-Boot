@@ -11,12 +11,15 @@ As a bonus, the project "Understanding Scopes" demonstrate the differences betwe
 They also investigate several approaches to using Spring classes in a JSF class
 (also see my article http://www.beyondjava.net/blog/integrate-jsf-2-spring-3-nicely/).
 
-Please note that you have to configure your IDE correctly to debug Spring Boot JSF applications.
+<b>Important note</b>
+If the JSF views are shown without data from the back-end, check whether your IDE put the
+class files into the wrong folde.
 For instance, Eclipse puts the class files into the wrong directory by default. You have to
 move them from "/bin" to "/src/webapp/WEB-INF/classes". The pom.xml and the .gradle files
 are a good start, but they aren't complete. To make things easier, I include
 the .classpath and .project files of Eclipse in this repository.
+Update Oct 11, 2014: The latest update of the Maven pom.xml files should make sure
+the folder setup is correct from start.
 
 You can switch from Oracle Mojarra to Apache MyFaces by setting the variable useMyFaces=true in 
-the .gradle file. However, MyFaces doesn't seem to be compatible with the AOP advices at the
-time of writing.
+the .gradle file. 
