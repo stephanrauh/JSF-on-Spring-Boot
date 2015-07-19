@@ -23,7 +23,7 @@ move them from "/bin" to "/src/webapp/WEB-INF/classes". The pom.xml and the .gra
 are a good start, but they aren't complete. To make things easier, I include
 the .classpath and .project files of Eclipse in this repository.
 
-<b>Update Oct 11, 2014:</b> The latest update of the Maven pom.xml files should make sure
+<b>Update Oct 11, 2014:</b> Good news for Maven users: The latest update of the Maven pom.xml files should make sure
 the folder setup is correct from start.
 
 You can switch from Oracle Mojarra to Apache MyFaces by setting the variable useMyFaces=true in 

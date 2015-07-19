@@ -2,8 +2,8 @@
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
-  <groupId></groupId>
-  <artifactId>PrimeFacesOnSpringBoot</artifactId>
+  <groupId>de.beyondjava</groupId>
+  <artifactId>PrimeFacesJSR303OnSpringBoot</artifactId>
   <version>1.0</version>
   <inceptionYear>2014</inceptionYear>
   <licenses>
@@ -22,7 +22,7 @@
     <dependency>
       <groupId>com.sun.faces</groupId>
       <artifactId>jsf-impl</artifactId>
-      <version>2.+</version>
+      <version>2.2.8-02</version>
       <scope>compile</scope>
     </dependency>
     <dependency>

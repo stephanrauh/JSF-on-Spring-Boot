@@ -35,7 +35,7 @@ dependencies {
 		compile 'org.apache.myfaces.core:myfaces-api:2.2.4'
 		runtime 'org.apache.myfaces.core:myfaces-impl:2.2.4'
 	} else {
-		compile 'com.sun.faces:jsf-api:2.+'
-		runtime 'com.sun.faces:jsf-impl:2.+'
+		compile 'com.sun.faces:jsf-api:2.2.8-02'
+		runtime 'com.sun.faces:jsf-impl:2.2.8-02'
 	}
 }
