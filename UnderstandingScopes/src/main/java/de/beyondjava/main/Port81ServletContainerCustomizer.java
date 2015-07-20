@@ -23,7 +23,7 @@ import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomi
 import org.springframework.boot.context.embedded.tomcat.TomcatConnectorCustomizer;
 import org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainerFactory;
 
-public class Port80ServletContainerCustomizer implements EmbeddedServletContainerCustomizer {
+public class Port81ServletContainerCustomizer implements EmbeddedServletContainerCustomizer {
 
 //	@Value("${name}")
 //	String name;
@@ -41,7 +41,7 @@ public class Port80ServletContainerCustomizer implements EmbeddedServletContaine
     factory.addConnectorCustomizers(new TomcatConnectorCustomizer() {
       @Override
       public void customize(Connector connector) {
-    	  connector.setPort(80);
+    	  connector.setPort(81);
 //        Object defaultMaxThreads = connector.getAttribute("maxThreads");
 //        connector.getAttribute("javax.faces.CLIENT_WINDOW_MODE")
         connector.setAttribute("maxThreads", MAX_THREADS);

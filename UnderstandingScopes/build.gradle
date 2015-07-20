@@ -8,6 +8,12 @@ boolean useMyFaces=false
 sourceCompatibility = 1.8
 version = '1.0'
 
+sourceSets {
+	main {
+		output.classesDir   = 'src/main/webapp/WEB-INF/classes'
+		output.resourcesDir = 'src/main/webapp/WEB-INF/classes'
+	}
+}
 
 jar {
     manifest {
